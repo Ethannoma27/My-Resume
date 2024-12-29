@@ -29,21 +29,9 @@ section.animate {
     transform: translateY(0);
 }
 
-/* 打印按钮样式 */
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
 
 button:hover {
     background-color: #0056b3;
-}
 }
 
 /* 容器设置，确保内容居中并且布局整齐 */
@@ -149,4 +137,16 @@ h3 {
     font-size: 16px;
     font-weight: bold;
     margin-top: 10px;
+}
+
+/* 打印按钮样式 */
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
