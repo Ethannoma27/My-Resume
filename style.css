@@ -26,7 +26,6 @@ body {
     margin-bottom: 20px;
 }
 
-
 .title {
     font-family: "KaiTi", serif;
     font-size: 36px;
@@ -38,6 +37,30 @@ h2 {
     font-size: 18px;
     font-weight: bold;
     color: #1a1a1a;
+    position: relative; /* 为伪元素定位 */
+    padding-bottom: 10px; /* 增加标题底部间距 */
+}
+
+/* 使用伪元素创建分割线 */
+h2::after {
+    content: "";              /* 创建空内容 */
+    position: absolute;       /* 绝对定位 */
+    left: 0;                  /* 定位到标题的左边 */
+    bottom: -6px;             /* 距离标题底部6px */
+    width: 100%;              /* 宽度100% */
+    height: 2px;              /* 分割线高度 */
+    background-color: #007BFF; /* 使用蓝色作为分割线颜色 */
+}
+
+/* 为其他标题（如 h3、h4等）同样添加分割线 */
+h3::after, h4::after, h5::after, h6::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background-color: #007BFF;
 }
 
 /* 动态加载动画 */
@@ -54,9 +77,20 @@ section.animate {
 
 /* 职业目标、教育背景、工作经验等部分的样式 */
 section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;  /* 增加部分的底部间距 */
 }
 
+/* 为section添加额外分割线 */
+section::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #e0f7fa;  /* 淡蓝色背景分割线 */
+    margin-bottom: 20px;  /* 分割线与内容之间的间距 */
+}
+
+/* 列表样式 */
 ul {
     list-style-type: none;
     padding-left: 20px;
@@ -119,61 +153,4 @@ button:hover {
     .container:last-child {
         page-break-after: auto;
     }
-
-    /* 页眉内容在打印时不显示 */
-    .header {
-        display: none;
-    }
-
-    button {
-        display: none; /* 隐藏按钮 */
-    }
 }
-/* 之前的样式部分 */
-/* 这里可能有您的页面背景色、字体、布局等样式 */
-
-/* 所有标题的基础样式 */
-h2, h3, h4, h5, h6 {
-    position: relative; /* 让伪元素相对于标题定位 */
-    font-size: 18px;    /* 标题的字体大小，您可以根据需要调整 */
-    margin: 20px 0;     /* 给标题增加上下的间距 */
-    padding-bottom: 4px; /* 给标题增加下方的间距 */
-    line-height: 24px;  /* 设置标题行高，方便控制半个字符的高度 */
-}
-
-/* 给所有标题增加半个字符高度的背景色条 */
-h2::after, h3::after, h4::after, h5::after, h6::after {
-    content: "";              /* 创建伪元素 */
-    position: absolute;       /* 绝对定位 */
-    left: 0;                  /* 定位到标题的左边 */
-    bottom: -12px;            /* 距离标题下方 12px，大约为半个字符的高度 */
-    width: 100%;              /* 背景条宽度与标题宽度相同 */
-    height: 12px;             /* 背景条高度为 12px，大约为半个字符的高度 */
-    background-color: #e0f7fa; /* 浅蓝色背景，您可以根据需要更改颜色 */
-}
-
-/* 如果需要更大的标题，调整不同的标题等级 */
-h1::after {
-    height: 12px; /* 例如：h1标签的背景条高度为12px */
-}
-
-h2::after {
-    height: 12px;
-}
-
-h3::after {
-    height: 12px;
-}
-
-h4::after {
-    height: 12px;
-}
-
-h5::after {
-    height: 12px;
-}
-
-h6::after {
-    height: 12px;
-}
-
