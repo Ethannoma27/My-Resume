@@ -21,10 +21,11 @@ body {
 /* 页眉样式 */
 .header {
     text-align: center;
-    background-color: #e0f7fa; /* 浅蓝色 */
+    background-color: #e0f7fa; /* 宝蓝色 */
     padding: 20px;
     margin-bottom: 20px;
 }
+
 
 .title {
     font-family: "KaiTi", serif;
@@ -37,22 +38,6 @@ h2 {
     font-size: 18px;
     font-weight: bold;
     color: #1a1a1a;
-    position: relative;  /* 使伪元素相对于标题定位 */
-    margin: 20px 0;  /* 为标题增加上下的间距 */
-    padding-bottom: 6px; /* 给标题增加下方间距 */
-    line-height: 24px; /* 设置标题行高，方便控制半个字符的高度 */
-    display: inline-block;  /* 使标题根据内容宽度自动调整 */
-}
-
-/* 给所有标题增加半个字符高度的背景色条 */
-h2::after {
-    content: "";                /* 创建伪元素 */
-    position: absolute;         /* 绝对定位 */
-    left: 0;                     /* 定位到标题的左边 */
-    bottom: -6px;                /* 距离标题下方 6px，约为半个字符的高度 */
-    width: auto;                 /* 宽度自动，和标题的宽度一样 */
-    height: 6px;                 /* 背景条高度为 6px，约为半个字符的高度 */
-    background-color: #e0f7fa;   /* 浅蓝色背景 */
 }
 
 /* 动态加载动画 */
@@ -72,7 +57,6 @@ section {
     margin-bottom: 20px;
 }
 
-/* 为 ul 添加样式 */
 ul {
     list-style-type: none;
     padding-left: 20px;
@@ -82,7 +66,7 @@ ul li {
     margin-bottom: 10px;
 }
 
-/* 给 h3 添加样式 */
+/* 分项内容的间距 */
 h3 {
     font-size: 16px;
     font-weight: bold;
@@ -144,5 +128,52 @@ button:hover {
     button {
         display: none; /* 隐藏按钮 */
     }
+}
+/* 之前的样式部分 */
+/* 这里可能有您的页面背景色、字体、布局等样式 */
+
+/* 所有标题的基础样式 */
+h2, h3, h4, h5, h6 {
+    position: relative; /* 让伪元素相对于标题定位 */
+    font-size: 18px;    /* 标题的字体大小，您可以根据需要调整 */
+    margin: 20px 0;     /* 给标题增加上下的间距 */
+    padding-bottom: 4px; /* 给标题增加下方的间距 */
+    line-height: 24px;  /* 设置标题行高，方便控制半个字符的高度 */
+}
+
+/* 给所有标题增加半个字符高度的背景色条 */
+h2::after, h3::after, h4::after, h5::after, h6::after {
+    content: "";              /* 创建伪元素 */
+    position: absolute;       /* 绝对定位 */
+    left: 0;                  /* 定位到标题的左边 */
+    bottom: -12px;            /* 距离标题下方 12px，大约为半个字符的高度 */
+    width: 100%;              /* 背景条宽度与标题宽度相同 */
+    height: 12px;             /* 背景条高度为 12px，大约为半个字符的高度 */
+    background-color: #e0f7fa; /* 浅蓝色背景，您可以根据需要更改颜色 */
+}
+
+/* 如果需要更大的标题，调整不同的标题等级 */
+h1::after {
+    height: 12px; /* 例如：h1标签的背景条高度为12px */
+}
+
+h2::after {
+    height: 12px;
+}
+
+h3::after {
+    height: 12px;
+}
+
+h4::after {
+    height: 12px;
+}
+
+h5::after {
+    height: 12px;
+}
+
+h6::after {
+    height: 12px;
 }
 
