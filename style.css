@@ -1,12 +1,14 @@
 /* Global styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: '楷体', 'KaiTi', 'Arial', sans-serif; /* 使用楷体字体，备选 Arial */
     margin: 0;
     padding: 0;
     background-color: #f4f7fa;
     color: #333;
+    line-height: 1.6;  /* 增加行高，提升可读性 */
 }
 
+/* Container */
 .container {
     width: 90%;
     margin: 0 auto;
@@ -17,64 +19,75 @@ body {
 header {
     background-color: #2c3e50;
     color: white;
-    padding: 20px 0;
+    padding: 30px 0; /* 增大头部区域的高度 */
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 增加阴影效果 */
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 3em; /* 增大标题字体 */
     margin: 0;
+    font-weight: normal; /* 使字体看起来更柔和 */
 }
 
+/* Name, job, location, salary */
 .name, .job, .location, .salary {
-    font-size: 1.2em;
-    margin: 5px 0;
+    font-size: 1.5em;
+    margin: 8px 0; /* 调整间距，使其更加协调 */
+    line-height: 1.4;
 }
 
 /* Section styles */
 section {
     background-color: white;
-    margin: 20px 0;
-    padding: 20px;
+    margin: 25px 0;
+    padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Section title */
 h2 {
-    font-size: 1.8em;
+    font-size: 2.2em;
     color: #2c3e50;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-weight: normal;
 }
 
+/* List */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
 ul li {
-    font-size: 1.1em;
-    margin: 8px 0;
+    font-size: 1.3em; /* 增大字体 */
+    margin: 10px 0;  /* 增加间距 */
 }
 
+/* Job section */
 .job {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .job h3 {
-    font-size: 1.5em;
+    font-size: 1.8em; /* 增大字体 */
     color: #2980b9;
+    font-weight: normal;  /* 使得子标题看起来不那么突兀 */
 }
 
 .job .duration {
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: #7f8c8d;
 }
 
+/* Footer */
 footer {
     background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* 增加阴影效果 */
 }
 
 /* Links */
@@ -86,3 +99,18 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* Adjusting some elements for better readability */
+h1, h2, h3 {
+    font-family: '楷体', 'KaiTi', sans-serif;
+}
+
+body, section, footer {
+    font-family: '楷体', 'KaiTi', sans-serif; /* 设置页面全局字体 */
+}
+
+/* Ensuring better font rendering */
+html {
+    font-size: 16px; /* 设置基本字体大小 */
+}
+
