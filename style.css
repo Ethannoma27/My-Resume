@@ -1,123 +1,130 @@
-/* Global styles */
+/* 设置全局字体和背景颜色 */
 body {
-    font-family: '楷体', 'KaiTi', 'Arial', sans-serif; /* 使用楷体字体，备选 Arial */
+    font-family: "Microsoft YaHei", sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    background-color: #f4f7fa;
     color: #333;
     line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh; /* 保证页面内容至少填满整个视口 */
 }
 
-/* Container */
+/* 容器设置，确保内容居中并且布局整齐 */
 .container {
-    width: 50%; /* 内容宽度设置为页面的50% */
-    max-width: 800px; /* 设置最大宽度，确保大屏幕下不会过度拉伸 */
-    margin: 0 auto; /* 居中对齐 */
+    width: 210mm; /* A4纸宽度 */
+    min-height: 297mm; /* A4纸高度 */
+    margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
 }
 
-/* Header */
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px 0;
+/* 页眉样式 */
+.header {
     text-align: center;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 2.5em; /* 标题字体适度减小 */
-    margin: 0;
-    font-weight: normal;
-}
-
-/* Name, job, location, salary */
-.name, .job, .location, .salary {
-    font-size: 1.3em;
-    margin: 5px 0;
-    line-height: 1.4;
-}
-
-/* Section styles */
-section {
-    background-color: white;
-    margin: 15px 0;
+    background-color: #f5f5f5;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left; /* 保持内容左对齐 */
+    margin-bottom: 20px;
 }
 
-/* Section title */
-section h2 {
-    font-size: 1.8em;
-    color: #2c3e50;
-    margin-bottom: 15px;
+.title {
+    font-family: "KaiTi", serif;
+    font-size: 36px;
+    color: #333;
+}
+
+/* 各个段落的标题 */
+h2 {
+    font-size: 18px;
     font-weight: bold;
+    color: #1a1a1a;
 }
 
-/* List */
+/* 动态加载动画 */
+section {
+    opacity: 0;
+    transform: translateY(30px); /* 从下方滑入 */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 职业目标、教育背景、工作经验等部分的样式 */
+section {
+    margin-bottom: 20px;
+}
+
 ul {
     list-style-type: none;
-    padding: 0;
+    padding-left: 20px;
 }
 
 ul li {
-    font-size: 1.2em;
-    margin: 8px 0;
-}
-
-/* Job section */
-.job {
-    margin-bottom: 15px;
-}
-
-.job h3 {
-    font-size: 1.6em;
-    color: #2980b9;
-    margin: 5px 0;
-}
-
-.job .duration {
-    font-size: 1.1em;
-    color: #7f8c8d;
     margin-bottom: 10px;
 }
 
-/* Footer */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 12px 0;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Links */
-a {
-    color: #2980b9;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Ensuring better font rendering */
-h1, h2, h3 {
-    font-family: '楷体', 'KaiTi', sans-serif;
-}
-
-body, section, footer {
-    font-family: '楷体', 'KaiTi', sans-serif;
-}
-
-/* Ensuring better font rendering */
-html {
+/* 分项内容的间距 */
+h3 {
     font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* 打印按钮样式 */
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 固定的反馈按钮 */
+.feedback-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-button:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 打印时优化页面布局 */
+@media print {
+    .container {
+        page-break-after: always;
+    }
+
+    .container:last-child {
+        page-break-after: auto;
+    }
+
+    /* 页眉内容在打印时不显示 */
+    .header {
+        display: none;
+    }
+
+    button {
+        display: none; /* 隐藏按钮 */
+    }
 }

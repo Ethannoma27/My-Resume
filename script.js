@@ -1,18 +1,46 @@
-// For interactive features (optional)
-// Example: smooth scrolling to sections
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('a');
+// 1. 打印页面功能
+function printResume() {
+    window.print();
+}
+
+// 2. 动态加载内容（滚动到页面部分时触发动画效果）
+document.addEventListener("DOMContentLoaded", () => {
+    // 监控滚动事件，给每个section元素添加动态效果
+    const sections = document.querySelectorAll('section');
     
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            window.scrollTo({
-                top: targetElement.offsetTop - 20,
-                behavior: 'smooth'
-            });
+    // 使用IntersectionObserver来检测页面滚动到特定区域
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
         });
+    }, { threshold: 0.5 });  // 触发条件：50%部分可见
+    
+    sections.forEach(section => {
+        observer.observe(section);
     });
+});
+
+// 3. 反馈按钮功能
+document.addEventListener('DOMContentLoaded', function () {
+    // 创建一个反馈按钮并将其添加到页面
+    let feedbackButton = document.createElement('button');
+    feedbackButton.innerHTML = '反馈/联系我';
+    feedbackButton.style.position = 'fixed';
+    feedbackButton.style.bottom = '20px';
+    feedbackButton.style.right = '20px';
+    feedbackButton.style.padding = '10px 20px';
+    feedbackButton.style.backgroundColor = '#007BFF';
+    feedbackButton.style.color = 'white';
+    feedbackButton.style.border = 'none';
+    feedbackButton.style.borderRadius = '5px';
+    feedbackButton.style.cursor = 'pointer';
+    
+    // 点击按钮时弹出联系信息
+    feedbackButton.addEventListener('click', function () {
+        alert("如果您对我的简历有任何问题或建议，请通过以下方式联系我：\n\n电话：[您的电话]\n邮箱：[您的邮箱]");
+    });
+    
+    document.body.appendChild(feedbackButton);
 });
