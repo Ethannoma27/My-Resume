@@ -8,6 +8,44 @@ body {
     line-height: 1.6;
 }
 
+.container {
+    width: 210mm; /* A4纸宽度 */
+    min-height: 297mm; /* A4纸高度 */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* 动态加载动画 */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 打印按钮样式 */
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+}
+
 /* 容器设置，确保内容居中并且布局整齐 */
 .container {
     width: 210mm; /* A4纸宽度 */
