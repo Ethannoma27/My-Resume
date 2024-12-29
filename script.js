@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('DOMContentLoaded', function () {
     // 创建一个反馈按钮并将其添加到页面
     let feedbackButton = document.createElement('button');
-    feedbackButton.innerHTML = '反馈/联系我';
+    feedbackButton.innerHTML = 'Contact Janney';
     feedbackButton.style.position = 'fixed';
     feedbackButton.style.bottom = '20px';
     feedbackButton.style.right = '20px';
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // 点击按钮时弹出联系信息
     feedbackButton.addEventListener('click', function () {
-        alert("如果您对我的简历有任何问题或建议，请通过以下方式联系我：\n\n电话：[您的电话]\n邮箱：[您的邮箱]");
+        alert("如果您对我的简历有任何问题或建议，请通过以下方式联系我：\n\n电话：[您的电话]\n邮箱：[您的邮箱]\n微信：[您的微信]");
     });
     
     document.body.appendChild(feedbackButton);
