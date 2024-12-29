@@ -6,13 +6,16 @@ body {
     background-color: #f4f7fa;
     color: #333;
     line-height: 1.6;  /* 增加行高，提升可读性 */
+    display: flex;
+    justify-content: center;
 }
 
 /* Container */
 .container {
-    width: 90%;
+    width: 80%; /* 控制宽度，左右保持空白 */
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1000px; /* 控制最大宽度 */
+    padding: 0 20px; /* 确保左右有空白 */
 }
 
 /* Header */
@@ -44,6 +47,7 @@ section {
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* 所有section的内容都居中 */
 }
 
 /* Section title */
@@ -100,7 +104,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Adjusting some elements for better readability */
+/* Ensuring better font rendering */
 h1, h2, h3 {
     font-family: '楷体', 'KaiTi', sans-serif;
 }
@@ -113,4 +117,3 @@ body, section, footer {
 html {
     font-size: 16px; /* 设置基本字体大小 */
 }
-
