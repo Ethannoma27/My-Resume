@@ -32,27 +32,45 @@ body {
     color: #333;
 }
 
-/* 各个段落的标题 */
-h2 {
+/* 设置personal-info中各项的布局 */
+.personal-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.personal-info-item {
+    flex: 0 0 45%;
+    margin-bottom: 10px;
+}
+
+.personal-info-item h2 {
     font-size: 18px;
     font-weight: bold;
     color: #1a1a1a;
-    position: relative; /* 为伪元素定位 */
-    padding-bottom: 10px; /* 增加标题底部间距 */
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 0;
 }
 
-/* 使用伪元素创建分割线 */
+.personal-info-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* 使用伪元素创建分割线，移除与背景颜色相同的细线 */
 h2::after {
-    content: "";              /* 创建空内容 */
-    position: absolute;       /* 绝对定位 */
-    left: 0;                  /* 定位到标题的左边 */
-    bottom: -6px;             /* 距离标题底部6px */
-    width: 100%;              /* 宽度100% */
-    height: 2px;              /* 分割线高度 */
-    background-color: #007BFF; /* 使用蓝色作为分割线颜色 */
+    content: "";              
+    position: absolute;       
+    left: 0;                  
+    bottom: -6px;             
+    width: 100%;              
+    height: 2px;             
+    background-color: transparent; /* 取消背景颜色 */
 }
 
-/* 为其他标题（如 h3、h4等）同样添加分割线 */
 h3::after, h4::after, h5::after, h6::after {
     content: "";
     position: absolute;
@@ -60,24 +78,12 @@ h3::after, h4::after, h5::after, h6::after {
     bottom: -6px;
     width: 100%;
     height: 2px;
-    background-color: #007BFF;
-}
-
-/* 动态加载动画 */
-section {
-    opacity: 0;
-    transform: translateY(30px); /* 从下方滑入 */
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-section.animate {
-    opacity: 1;
-    transform: translateY(0);
+    background-color: transparent; /* 取消背景颜色 */
 }
 
 /* 职业目标、教育背景、工作经验等部分的样式 */
 section {
-    margin-bottom: 30px;  /* 增加部分的底部间距 */
+    margin-bottom: 30px;  
 }
 
 /* 为section添加额外分割线 */
@@ -87,7 +93,7 @@ section::before {
     width: 100%;
     height: 1px;
     background-color: #e0f7fa;  /* 淡蓝色背景分割线 */
-    margin-bottom: 20px;  /* 分割线与内容之间的间距 */
+    margin-bottom: 20px;  
 }
 
 /* 列表样式 */
@@ -105,52 +111,4 @@ h3 {
     font-size: 16px;
     font-weight: bold;
     margin-top: 10px;
-}
-
-/* 打印按钮样式 */
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* 固定的反馈按钮 */
-.feedback-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 12px 24px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feedback-button:hover {
-    background-color: #218838;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* 打印时优化页面布局 */
-@media print {
-    .container {
-        page-break-after: always;
-    }
-
-    .container:last-child {
-        page-break-after: auto;
-    }
 }
