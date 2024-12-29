@@ -30,79 +30,6 @@ section.animate {
     transform: translateY(0);
 }
 
-/* 容器设置，确保内容居中并且布局整齐 */
-.container {
-    width: 210mm; /* A4纸宽度 */
-    min-height: 297mm; /* A4纸高度 */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-sizing: border-box;
-}
-
-/* 页眉样式 */
-.header {
-    text-align: center;
-    background-color: #e0f7fa; /* 宝蓝色 */
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.title {
-    font-family: "KaiTi", serif;
-    font-size: 36px;
-    color: #333;
-}
-
-/* 设置personal-info中各项的布局 */
-.personal-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.personal-info-item {
-    flex: 0 0 45%;
-    margin-bottom: 10px;
-}
-
-.personal-info-item h2 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #1a1a1a;
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 0;
-}
-
-.personal-info-item p {
-    margin: 0;
-    font-size: 16px;
-    color: #555;
-}
-
-/* 使用伪元素创建分割线，移除与背景颜色相同的细线 */
-h2::after {
-    content: "";              
-    position: absolute;       
-    left: 0;                  
-    bottom: -6px;             
-    width: 100%;              
-    height: 2px;             
-    background-color: transparent; /* 取消背景颜色 */
-}
-
-h3::after, h4::after, h5::after, h6::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 2px;
-    background-color: transparent; /* 取消背景颜色 */
-}
-
 /* 职业目标、教育背景、工作经验等部分的样式 */
 section {
     margin-bottom: 30px;  
@@ -118,23 +45,6 @@ section::before {
     margin-bottom: 20px;  
 }
 
-/* 列表样式 */
-ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-/* 分项内容的间距 */
-h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
 /* 打印按钮样式：固定在页面右上角 */
 button {
     padding: 10px 20px;
@@ -145,13 +55,25 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    position: fixed;         /* 固定位置 */
-    bottom: 20px;            /* 距离底部20px */
-    left: 50%;               /* 居中 */
-    transform: translateX(-50%); /* 精确居中 */
-    z-index: 1000;           /* 确保按钮在页面最上层 */
+}
+
+/* 反馈按钮固定在页面右下角 */
+button:nth-of-type(1) {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* 打印按钮样式：固定在页面右上角 */
+button:nth-of-type(2) {
+    position: fixed;
+    top: 20px;           /* 距离顶部20px */
+    right: 20px;         /* 距离右边20px */
+    background-color: #28a745;  /* 绿色背景 */
+    z-index: 1000;       /* 确保按钮在页面最上层 */
 }
 
 button:hover {
     background-color: #0056b3;
 }
+
