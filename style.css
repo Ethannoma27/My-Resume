@@ -21,10 +21,11 @@ body {
 /* 页眉样式 */
 .header {
     text-align: center;
-    background-color: #f5f5f5;
+    background-color: #e0f7fa; /* 浅蓝色 */
     padding: 20px;
     margin-bottom: 20px;
 }
+
 
 .title {
     font-family: "KaiTi", serif;
