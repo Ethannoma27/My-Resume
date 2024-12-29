@@ -5,16 +5,17 @@ body {
     padding: 0;
     background-color: #f4f7fa;
     color: #333;
-    line-height: 1.6;  /* 增加行高，提升可读性 */
+    line-height: 1.6;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
 }
 
 /* Container */
 .container {
-    width: 80%; /* 控制宽度，左右保持空白 */
+    width: 85%; /* 宽度调整为 85%，保持适当的空白 */
     margin: 0 auto;
-    max-width: 1000px; /* 控制最大宽度 */
+    max-width: 1200px; /* 限制最大宽度 */
     padding: 0 20px; /* 确保左右有空白 */
 }
 
@@ -22,40 +23,41 @@ body {
 header {
     background-color: #2c3e50;
     color: white;
-    padding: 30px 0; /* 增大头部区域的高度 */
+    padding: 20px 0; /* 减小头部高度 */
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 增加阴影效果 */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 3em; /* 增大标题字体 */
+    font-size: 2.5em; /* 减小标题字体 */
     margin: 0;
-    font-weight: normal; /* 使字体看起来更柔和 */
+    font-weight: normal;
 }
 
 /* Name, job, location, salary */
 .name, .job, .location, .salary {
-    font-size: 1.5em;
-    margin: 8px 0; /* 调整间距，使其更加协调 */
+    font-size: 1.3em;
+    margin: 5px 0; /* 更小的间距 */
     line-height: 1.4;
 }
 
 /* Section styles */
 section {
     background-color: white;
-    margin: 25px 0;
-    padding: 25px;
+    margin: 15px 0; /* 减少间距，紧凑排版 */
+    padding: 20px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* 所有section的内容都居中 */
+    text-align: left; /* 内容左对齐，确保阅读体验 */
 }
 
-/* Section title */
-h2 {
-    font-size: 2.2em;
+section h2 {
+    font-size: 1.8em;
     color: #2c3e50;
-    margin-bottom: 20px;
-    font-weight: normal;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
 /* List */
@@ -65,24 +67,25 @@ ul {
 }
 
 ul li {
-    font-size: 1.3em; /* 增大字体 */
-    margin: 10px 0;  /* 增加间距 */
+    font-size: 1.2em; /* 更小的字体 */
+    margin: 8px 0;
 }
 
 /* Job section */
 .job {
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* 更小的间距 */
 }
 
 .job h3 {
-    font-size: 1.8em; /* 增大字体 */
+    font-size: 1.6em;
     color: #2980b9;
-    font-weight: normal;  /* 使得子标题看起来不那么突兀 */
+    margin: 5px 0;
 }
 
 .job .duration {
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: #7f8c8d;
+    margin-bottom: 10px; /* 增加一些底部间距 */
 }
 
 /* Footer */
@@ -90,8 +93,8 @@ footer {
     background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 15px 0;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* 增加阴影效果 */
+    padding: 12px 0; /* 缩小 footer 高度 */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Links */
@@ -110,7 +113,7 @@ h1, h2, h3 {
 }
 
 body, section, footer {
-    font-family: '楷体', 'KaiTi', sans-serif; /* 设置页面全局字体 */
+    font-family: '楷体', 'KaiTi', sans-serif;
 }
 
 /* Ensuring better font rendering */
