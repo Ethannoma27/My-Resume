@@ -1,9 +1,9 @@
-// 1. 打印页面功能
+// 打印页面功能
 function printResume() {
     window.print();
 }
 
-// 2. 动态加载内容（滚动到页面部分时触发动画效果）
+// 动态加载内容（滚动到页面部分时触发动画效果）
 document.addEventListener("DOMContentLoaded", () => {
     // 监控滚动事件，给每个section元素添加动态效果
     const sections = document.querySelectorAll('section');
@@ -22,54 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// 3. 反馈按钮功能
-document.addEventListener('DOMContentLoaded', function () {
-    // 创建一个反馈按钮并将其添加到页面
-    let feedbackButton = document.createElement('button');
-    feedbackButton.innerHTML = 'Contact Janney';
-    feedbackButton.style.position = 'fixed';
-    feedbackButton.style.bottom = '20px';
-    feedbackButton.style.right = '20px';
-    feedbackButton.style.padding = '10px 20px';
-    feedbackButton.style.backgroundColor = '#007BFF';
-    feedbackButton.style.color = 'white';
-    feedbackButton.style.border = 'none';
-    feedbackButton.style.borderRadius = '5px';
-    feedbackButton.style.cursor = 'pointer';
-    
-    // 点击按钮时弹出联系信息
-    feedbackButton.addEventListener('click', function () {
-        alert("如果您对我的简历有任何问题或建议，请通过以下方式联系我：\n\n电话：[您的电话]\n邮箱：[您的邮箱]\n微信：[您的微信]");
-    });
-    
-    document.body.appendChild(feedbackButton);
-});
-
-// 1. 打印页面功能
-function printResume() {
-    window.print();
-}
-
-// 2. 动态加载内容（滚动到页面部分时触发动画效果）
-document.addEventListener("DOMContentLoaded", () => {
-    // 监控滚动事件，给每个section元素添加动态效果
-    const sections = document.querySelectorAll('section');
-    
-    // 使用IntersectionObserver来检测页面滚动到特定区域
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
-        });
-    }, { threshold: 0.5 });  // 触发条件：50%部分可见
-    
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-});
-
-// 3. 反馈按钮功能
+// 反馈按钮功能
 document.addEventListener('DOMContentLoaded', function () {
     // 创建一个反馈按钮并将其添加到页面
     let feedbackButton = document.createElement('button');
@@ -77,19 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
     feedbackButton.style.position = 'fixed';
     feedbackButton.style.bottom = '20px';  // 保持底部位置
     feedbackButton.style.right = '20px';   // 右下角
-    feedbackButton.style.padding = '10px 20px';
-    feedbackButton.style.backgroundColor = '#007BFF';
-    feedbackButton.style.color = 'white';
-    feedbackButton.style.border = 'none';
-    feedbackButton.style.borderRadius = '5px';
-    feedbackButton.style.cursor = 'pointer';
-    
+    document.body.appendChild(feedbackButton);
+
     // 点击按钮时弹出联系信息
     feedbackButton.addEventListener('click', function () {
         alert("如果您对我的简历有任何问题或建议，请通过以下方式联系我：\n\n电话：[您的电话]\n邮箱：[您的邮箱]");
     });
-    
-    document.body.appendChild(feedbackButton);
 
     // 创建一个打印按钮并将其添加到页面
     let printButton = document.createElement('button');
@@ -97,17 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
     printButton.style.position = 'fixed';
     printButton.style.top = '20px';      // 右上角
     printButton.style.right = '20px';    // 右上角
-    printButton.style.padding = '10px 20px';
-    printButton.style.backgroundColor = '#28a745'; // 绿色
-    printButton.style.color = 'white';
-    printButton.style.border = 'none';
-    printButton.style.borderRadius = '5px';
-    printButton.style.cursor = 'pointer';
+    document.body.appendChild(printButton);
 
     // 点击按钮时调用打印功能
     printButton.addEventListener('click', function () {
         printResume();
     });
-
-    document.body.appendChild(printButton);
 });

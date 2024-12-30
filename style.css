@@ -1,13 +1,14 @@
 /* 设置全局字体和背景颜色 */
 body {
     font-family: "Microsoft YaHei", sans-serif;
-    background-color: #f4f4f4;
+    background: linear-gradient(to right, #e0f7fa, #b3e5fc); /* 柔和的渐变背景 */
     margin: 0;
     padding: 0;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.8;  /* 调整行高，使阅读更舒适 */
 }
 
+/* 容器的样式 */
 .container {
     width: 210mm; /* A4纸宽度 */
     min-height: 297mm; /* A4纸高度 */
@@ -15,7 +16,8 @@ body {
     padding: 20px;
     background-color: #fff;
     box-sizing: border-box;
-    position: relative;  /* 需要相对定位，以便其他元素可以基于此定位 */
+    border-radius: 10px;  /* 使容器边角圆润 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 加入柔和的阴影 */
 }
 
 /* 动态加载动画 */
@@ -25,6 +27,7 @@ section {
     transition: opacity 1s ease, transform 1s ease;
 }
 
+/* 滚动触发动画 */
 section.animate {
     opacity: 1;
     transform: translateY(0);
@@ -32,7 +35,10 @@ section.animate {
 
 /* 职业目标、教育背景、工作经验等部分的样式 */
 section {
-    margin-bottom: 30px;  
+    margin-bottom: 30px;
+    padding: 20px;  /* 为每个部分添加内边距，使内容不显得过于拥挤 */
+    background-color: #f9f9f9;  /* 轻微的背景色 */
+    border-radius: 8px; /* 圆角 */
 }
 
 /* 为section添加额外分割线 */
@@ -40,21 +46,27 @@ section::before {
     content: "";
     display: block;
     width: 100%;
-    height: 1px;
-    background-color: #e0f7fa;  /* 淡蓝色背景分割线 */
-    margin-bottom: 20px;  
+    height: 2px;
+    background: linear-gradient(to right, #007BFF, #00bcd4); /* 渐变色分割线 */
+    margin-bottom: 20px;
 }
 
-/* 打印按钮样式：固定在页面右上角 */
+/* 按钮样式：固定在页面右上角 */
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* 鼠标悬停时，按钮的颜色和动画效果 */
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* 放大效果，给用户反馈 */
 }
 
 /* 反馈按钮固定在页面右下角 */
@@ -67,13 +79,26 @@ button:nth-of-type(1) {
 /* 打印按钮样式：固定在页面右上角 */
 button:nth-of-type(2) {
     position: fixed;
-    top: 20px;           /* 距离顶部20px */
-    right: 20px;         /* 距离右边20px */
+    top: 20px;
+    right: 20px;
     background-color: #28a745;  /* 绿色背景 */
-    z-index: 1000;       /* 确保按钮在页面最上层 */
+    z-index: 1000;
 }
 
-button:hover {
-    background-color: #0056b3;
+/* 打印按钮鼠标悬停效果 */
+button:nth-of-type(2):hover {
+    background-color: #218838; /* 深绿色 */
+}
+
+/* 自适应设计，优化手机端展示 */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }
 
