@@ -94,12 +94,12 @@ button:nth-of-type(2):hover {
 /* 个人信息部分 */
 .personal-info {
     display: flex;
-    flex-wrap: wrap; /* 允许换行 */
-    gap: 20px; /* 设置项之间的间距 */
-    padding: 20px;
+    flex-wrap: wrap;  /* 允许换行 */
+    gap: 10px;  /* 缩小项之间的间距 */
+    padding: 10px;  /* 减少内边距 */
     background-color: #f9f9f9;
     border-radius: 8px;
-    max-width: 100%; /* 确保最大宽度不超过容器 */
+    max-width: 100%;
 }
 
 /* 单个信息项 */
@@ -108,19 +108,21 @@ button:nth-of-type(2):hover {
     flex-direction: column;  /* 每个信息项内，标题和内容垂直排列 */
     justify-content: center;
     align-items: flex-start;
-    width: 48%; /* 每个项占用宽度的48%，留出空隙 */
+    width: 30%;  /* 增大每项宽度，占据更大的空间 */
+    margin: 0;  /* 删除外边距 */
 }
 
-/* 为h2标签和p标签设置不同的样式，避免布局错乱 */
+/* 缩小标题的字体大小 */
 .personal-info-item h2 {
-    font-size: 0.9rem;  /* 缩小h2字体 */
+    font-size: 0.8rem;  /* 进一步缩小标题的字体 */
     margin: 0;
-    width: 100%; /* 让标题占满一行 */
+    width: 100%;
 }
 
+/* 缩小内容的字体大小，并设置内容之间的间距 */
 .personal-info-item p {
-    margin: 5px 0 0;  /* 给内容设置顶部间距 */
-    font-size: 0.9rem; /* 控制文字大小 */
+    margin: 2px 0;  /* 更小的间距 */
+    font-size: 0.8rem;  /* 控制内容字体的大小 */
     text-align: left;
 }
 
