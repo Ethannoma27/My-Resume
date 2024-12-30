@@ -24,9 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 创建反馈按钮
     const feedbackButton = document.createElement('button');
     feedbackButton.textContent = '反馈/联系我';
-    feedbackButton.style.position = 'fixed';
-    feedbackButton.style.bottom = '20px';  // 底部位置
-    feedbackButton.style.right = '20px';   // 右下角
+    feedbackButton.classList.add('contact-button');  // 给按钮添加一个类
     document.body.appendChild(feedbackButton);
 
     // 反馈按钮点击事件
@@ -37,10 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 创建打印按钮
     const printButton = document.createElement('button');
     printButton.textContent = '打印简历';
-    printButton.style.position = 'fixed';
-    printButton.style.top = '20px';      // 右上角
-    printButton.style.right = '20px';    // 右上角
-    printButton.style.backgroundColor = '#28a745';  // 打印按钮绿色
+    printButton.classList.add('print-button');  // 给按钮添加一个类
     document.body.appendChild(printButton);
 
     // 打印按钮点击事件
