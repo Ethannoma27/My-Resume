@@ -10,7 +10,8 @@ body {
 
 /* 容器的样式 */
 .container {
-    width: 210mm; /* A4纸宽度 */
+    width: 80%; /* 设置为百分比，使容器宽度响应式 */
+    max-width: 210mm; /* 设置最大宽度为A4纸的宽度 */
     min-height: 297mm; /* A4纸高度 */
     margin: 0 auto;
     padding: 20px;
@@ -102,3 +103,8 @@ button:nth-of-type(2):hover {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+}
