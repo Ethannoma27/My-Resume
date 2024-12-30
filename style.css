@@ -139,16 +139,21 @@ button:nth-of-type(2):hover {
     }
 
     .personal-info {
-        max-width: 100%; /* 在手机端占据100%的宽度 */
+        width: 100%;  /* 使个人信息块在手机端占满整个宽度 */
+        flex-direction: column;  /* 列方向排列 */
+        align-items: center;  /* 让信息居中 */
     }
 
     .personal-info-item {
-        width: 100%; /* 在手机端每项占满一行 */
+        width: 100%;  /* 使每个信息项占满父容器的宽度 */
+        margin-bottom: 10px;  /* 增加每项之间的间距 */
     }
-}
 
-@media screen and (max-width: 1200px) {
-    .container {
-        width: 90%;
+    .personal-info-item h2 {
+        font-size: 0.9rem;  /* 在小屏设备上适当增大标题字体 */
+    }
+
+    .personal-info-item p {
+        font-size: 0.9rem;  /* 增大内容字体 */
     }
 }

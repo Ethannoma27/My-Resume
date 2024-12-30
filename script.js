@@ -1,44 +1,42 @@
-// 打印页面功能
-function printResume() {
-    window.print();
+// 修改后的反馈按钮功能，包含二维码
+function showContactInfo() {
+    // 创建一个简单的弹出框，展示微信号和二维码
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100vw';
+    modal.style.height = '100vh';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.zIndex = '1000';
+    
+    // 创建弹出内容
+    const modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = '#fff';
+    modalContent.style.padding = '20px';
+    modalContent.style.borderRadius = '10px';
+    modalContent.style.textAlign = 'center';
+    modalContent.style.maxWidth = '80%';
+    modalContent.innerHTML = `
+        <h2>添加微信联系</h2>
+        <p>请扫码或添加我的微信号：</p>
+        <p><strong>your_wechat_id</strong></p>
+        <img src="path_to_your_qr_code_image.jpg" alt="微信二维码" style="width: 200px; height: 200px; margin: 20px auto; display: block;">
+        <button onclick="closeModal()">关闭</button>
+    `;
+    
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
 }
 
-// 动态加载内容（滚动到页面部分时触发动画效果）
-document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll('section');
-    
-    // 使用IntersectionObserver来检测页面滚动到特定区域
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
-        });
-    }, { threshold: 0.5 });  // 触发条件：50%部分可见
-
-    sections.forEach(section => observer.observe(section));
-});
-
-// 反馈和打印按钮功能
-document.addEventListener('DOMContentLoaded', () => {
-    // 创建反馈按钮
-    const feedbackButton = document.createElement('button');
-    feedbackButton.textContent = '反馈/联系我';
-    feedbackButton.classList.add('contact-button');  // 给按钮添加一个类
-    document.body.appendChild(feedbackButton);
-
-    // 反馈按钮点击事件
-    feedbackButton.addEventListener('click', () => {
-        alert("如果您对我的简历有任何问题或建议，请通过以下方式联系我：\n\n电话：[您的电话]\n邮箱：[您的邮箱]");
-    });
-
-    // 创建打印按钮
-    const printButton = document.createElement('button');
-    printButton.textContent = '打印简历';
-    printButton.classList.add('print-button');  // 给按钮添加一个类
-    document.body.appendChild(printButton);
-
-    // 打印按钮点击事件
-    printButton.addEventListener('click', printResume);
-});
+// 关闭弹窗
+function closeModal() {
+    const modal = document.querySelector('div[style*="position: fixed"]');
+    if (modal) {
+        modal.remove();
+    }
+}
 
