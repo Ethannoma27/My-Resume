@@ -94,33 +94,34 @@ button:nth-of-type(2):hover {
 /* 个人信息部分 */
 .personal-info {
     display: flex;
-    flex-direction: column; /* 垂直排列 */
-    gap: 15px; /* 设置项之间的间距 */
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 20px; /* 设置项之间的间距 */
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    max-width: 60%; /* 让个人信息区域占用宽度的一部分 */
+    max-width: 100%; /* 确保最大宽度不超过容器 */
 }
 
 /* 单个信息项 */
 .personal-info-item {
     display: flex;
-    justify-content: space-between;  /* 左右对齐 */
-    align-items: center;  /* 垂直居中 */
+    flex-direction: column;  /* 每个信息项内，标题和内容垂直排列 */
+    justify-content: center;
+    align-items: flex-start;
+    width: 48%; /* 每个项占用宽度的48%，留出空隙 */
 }
 
 /* 为h2标签和p标签设置不同的样式，避免布局错乱 */
 .personal-info-item h2 {
-    font-size: 1rem;  /* 缩小h2字体 */
+    font-size: 0.9rem;  /* 缩小h2字体 */
     margin: 0;
-    width: 100px; /* 固定label宽度 */
+    width: 100%; /* 让标题占满一行 */
 }
 
 .personal-info-item p {
-    flex-grow: 1; /* 使p标签占据剩余空间 */
-    margin: 0;
+    margin: 5px 0 0;  /* 给内容设置顶部间距 */
+    font-size: 0.9rem; /* 控制文字大小 */
     text-align: left;
-    font-size: 1rem; /* 控制文字大小 */
 }
 
 /* 自适应设计，优化手机端展示 */
@@ -137,6 +138,10 @@ button:nth-of-type(2):hover {
 
     .personal-info {
         max-width: 100%; /* 在手机端占据100%的宽度 */
+    }
+
+    .personal-info-item {
+        width: 100%; /* 在手机端每项占满一行 */
     }
 }
 
